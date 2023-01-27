@@ -13,11 +13,12 @@ public class Casa {
     private int numeroBanios;
     private int numeroCuartos;
     private String estado;
+    private String duenio;
 
     public Casa() {
     }
 
-    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int numeroBanios, int numeroCuartos) {
+    public Casa(int numeroCasa, int numeroBloque, Color color, double ancho, double largo, int numeroBanios, int numeroCuartos,String estado) {
         this.numeroCasa = numeroCasa;
         this.numeroBloque = numeroBloque;
         this.color = color;
@@ -25,6 +26,7 @@ public class Casa {
         this.largo = largo;
         this.numeroBanios = numeroBanios;
         this.numeroCuartos = numeroCuartos;
+        this.estado = estado;
     }
 
     public int getNumeroCasa() {
@@ -90,13 +92,24 @@ public class Casa {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+
+    public String getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(String duenio) {
+        this.duenio = duenio;
+    }
 
     @Override
     public String toString() {
-        return "Casa{" + "numeroCasa=" + numeroCasa + ", numeroBloque=" + numeroBloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", numeroBanios=" + numeroBanios + ", numeroCuartos=" + numeroCuartos + '}';
+        return "Casa{" + "numeroCasa=" + numeroCasa + ", numeroBloque=" + numeroBloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", numeroBanios=" + numeroBanios + ", numeroCuartos=" + numeroCuartos + ", estado=" + estado + '}';
     }
+    
+    
+    
+
+    
     
     
 }

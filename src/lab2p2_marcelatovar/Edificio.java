@@ -7,15 +7,18 @@ public class Edificio {
     private int cantidadLocales;
     private String dirrecionReferencia;
     private String estado;
+    private String duenio;
 
     public Edificio() {
     }
 
-    public Edificio(int numeroPisos, int cantidadLocales, String dirrecionReferencia) {
+    public Edificio(int numeroPisos, int cantidadLocales, String dirrecionReferencia, String estado) {
         this.numeroPisos = numeroPisos;
         this.cantidadLocales = cantidadLocales;
         this.dirrecionReferencia = dirrecionReferencia;
+        this.estado = estado;
     }
+    
 
     public int getNumeroPisos() {
         return numeroPisos;
@@ -48,13 +51,23 @@ public class Edificio {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+
+    public String getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(String duenio) {
+        this.duenio = duenio;
+    }
 
     @Override
     public String toString() {
-        return "Edificio{" + "numeroPisos=" + numeroPisos + ", cantidadLocales=" + cantidadLocales + ", dirrecionReferencia=" + dirrecionReferencia + '}';
+        return "Edificio{" + "numeroPisos=" + numeroPisos + ", cantidadLocales=" + cantidadLocales + ", dirrecionReferencia=" + dirrecionReferencia + ", estado=" + estado + '}';
     }
+    
+    
+
+    
     
     
 }

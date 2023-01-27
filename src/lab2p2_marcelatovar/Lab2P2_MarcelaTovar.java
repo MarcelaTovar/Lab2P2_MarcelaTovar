@@ -86,7 +86,7 @@ public class Lab2P2_MarcelaTovar {
                                 int banios = leer.nextInt();
                                 System.out.println("Ingrese el numero de cuartos: ");
                                 int cuarto = leer.nextInt();
-                                Casa casa = new Casa(numeroCasas, numeroBloque, color, ancho, largo, banios, cuarto);
+                                Casa casa = new Casa(numeroCasas, numeroBloque, color, ancho, largo, banios, cuarto, "En espera de demolicion");
                                 objetos.add(casa);
                             } else {
                                 System.out.println("Usted no tiene la autoridad para esta accion");
@@ -101,7 +101,7 @@ public class Lab2P2_MarcelaTovar {
                                 int cantidadLocales = leer.nextInt();
                                 System.out.println("Ingrese la direccion de referencia: ");
                                 String ref = leer.nextLine();
-                                Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref);
+                                Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref, "En espera de demolicion");
                                 objetos.add(edificio);
                             } else {
                                 System.out.println("Usted no tiene la autoridad para esta accion");
@@ -382,7 +382,43 @@ public class Lab2P2_MarcelaTovar {
 
         return terminar;
     }
-    
-    
+
+    public static void Estado(ArrayList objetos) {
+        Scanner leer = new Scanner(System.in);
+        if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
+            System.out.println("Desea cambiar casas[C] o edificios[E]?");
+            String opcion = leer.next();
+            if (opcion.equalsIgnoreCase("C")) {
+                for (Object t : objetos) {
+                    if (t instanceof Casa) {
+                        System.out.println(t.toString());
+                    }
+                }
+                System.out.println("Ingrese la posicion: ");
+                int p = leer.nextInt();
+                System.out.println("Ingrese el nuevo Estado: ");
+                String estado = leer.nextLine();
+                ((Casa)objetos.get(p)).setEstado(estado);
+                System.out.println("Ingrese el duenio: ");
+                ((Casa)objetos.get(p)).setDuenio(estado);
+            }else if(opcion.equalsIgnoreCase("E")){
+                for (Object t : objetos) {
+                    if (t instanceof Edificio) {
+                        System.out.println(t.toString());
+                    }
+                }
+                System.out.println("Ingrese la posicion: ");
+                int p = leer.nextInt();
+                System.out.println("Ingrese el nuevo Estado: ");
+                String estado = leer.nextLine();
+                ((Edificio)objetos.get(p)).setEstado(estado);
+                 System.out.println("Ingrese el duenio: ");
+                ((Edificio)objetos.get(p)).setDuenio(estado);
+            }
+        }
+        else{
+            System.out.println("No tiene la autoridad para realizar este cambio");
+        }
+    }
 
 }
