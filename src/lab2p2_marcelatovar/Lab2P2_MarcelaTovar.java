@@ -187,15 +187,60 @@ public class Lab2P2_MarcelaTovar {
                                     System.out.println(t.toString());
                                 }
                             }
+                            System.out.println("Ingrese la posicion que quiere modificar: ");
+                            int pos = leer.nextInt();
                             System.out.println("Que quiere modificar?");
                             System.out.println("1. Cantidad de locales");
                             System.out.println("2. Numero de pisos");
                             System.out.println("3. Direccion de referencia");
                             int escoger = leer.nextInt();
                             
+                            if (escoger == 1) {
+                                System.out.println("Cual es la nueva cantidad de locales?");
+                                int nuevo = leer.nextInt();
+                                ((Edificio)objetos.get(pos)).setCantidadLocales(nuevo);
+                                
+                            }else if(escoger ==2){
+                                System.out.println("Cual es el nuevo numero de pisos?");
+                                int nuevo = leer.nextInt();
+                                ((Edificio)objetos.get(pos)).setNumeroPisos(nuevo);
+                            }else if(escoger == 3){
+                                System.out.println("Cual es la nueva direccion de referencia?");
+                                String nuevo = leer.nextLine();
+                                ((Edificio)objetos.get(pos)).setDirrecionReferencia(nuevo);
+                            }
+                            
                         }
                         case 3 -> {
-
+                            for (Object t : objetos) {
+                                if (t instanceof Solar) {
+                                    System.out.println(t.toString());
+                                }
+                            }
+                            System.out.println("Ingrese la posicion que quiere modificar: ");
+                            int pos = leer.nextInt();
+                            System.out.println("Que quiere modificar?");
+                            System.out.println("1. Ancho");
+                            System.out.println("2. Largo");
+                            System.out.println("3. Duenio");
+                            int escoger = leer.nextInt();
+                            if(escoger == 1){
+                                System.out.println("Cual es el nuevo ancho?");
+                                int nuevo = leer.nextInt();
+                                ((Solar)objetos.get(pos)).setAncho(nuevo);
+                                
+                            }else if(escoger == 2){
+                                System.out.println("Cual es el nuevo largo?");
+                                int nuevo = leer.nextInt();
+                                ((Solar)objetos.get(pos)).setLargo(nuevo);
+                                
+                            }else if(escoger == 3){
+                                System.out.println("Cual es el nuevo ancho?");
+                                String nuevo = leer.nextLine();
+                                ((Solar)objetos.get(pos)).setDuenio(nuevo);
+                                
+                            }
+                            
                         }
                     }
                 }
