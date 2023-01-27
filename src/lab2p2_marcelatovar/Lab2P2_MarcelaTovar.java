@@ -7,7 +7,7 @@ import javax.swing.JColorChooser;
 public class Lab2P2_MarcelaTovar {
 
     public static void main(String[] args) {
-
+        menu();
     }
 
     public static void menu() {
@@ -23,7 +23,7 @@ public class Lab2P2_MarcelaTovar {
             switch (opcion) {
                 case 1 -> {
                     if (log) {
-
+                        registro(objetos);
                     } else {
                         System.out.println("Porfavor ingrese la sesion");
                     }
@@ -58,7 +58,7 @@ public class Lab2P2_MarcelaTovar {
             System.out.println("--Menu Registro--");
             System.out.println("1.Crear\n2.Listar\n3.Modificar\n4.Borrar\n5.Vender");
             int opcion = leer.nextInt();
-           
+
             int opcionLugar = 0;
             switch (opcion) {
                 case 1 -> {
@@ -80,7 +80,7 @@ public class Lab2P2_MarcelaTovar {
                             int banios = leer.nextInt();
                             System.out.println("Ingrese el numero de cuartos: ");
                             int cuarto = leer.nextInt();
-                            Casa casa = new Casa(numeroCasas,numeroBloque,color,ancho,largo,banios,cuarto);
+                            Casa casa = new Casa(numeroCasas, numeroBloque, color, ancho, largo, banios, cuarto);
                             objetos.add(casa);
                         }
                         case 2 -> {
@@ -90,7 +90,7 @@ public class Lab2P2_MarcelaTovar {
                             int cantidadLocales = leer.nextInt();
                             System.out.println("Ingrese la direccion de referencia: ");
                             String ref = leer.nextLine();
-                            Edificio edificio = new Edificio(numeroPisos,cantidadLocales,ref);
+                            Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref);
                             objetos.add(edificio);
                         }
                         case 3 -> {
@@ -100,10 +100,10 @@ public class Lab2P2_MarcelaTovar {
                             int ancho = leer.nextInt();
                             System.out.println("Ingrese el duenio: ");
                             String duenio = leer.nextLine();
-                            Solar solar = new Solar(ancho,largo,duenio);
+                            Solar solar = new Solar(ancho, largo, duenio);
                             objetos.add(solar);
                         }
-                        
+
                     }
                 }
                 case 2 -> {
@@ -111,13 +111,25 @@ public class Lab2P2_MarcelaTovar {
                     opcionLugar = leer.nextInt();
                     switch (opcionLugar) {
                         case 1 -> {
-
+                            for(Object t : objetos){
+                                if (t instanceof Casa) {
+                                    System.out.println(t.toString());
+                                }
+                            }
                         }
                         case 2 -> {
-
+                            for(Object t : objetos){
+                                if (t instanceof Edificio) {
+                                    System.out.println(t.toString());
+                                }
+                            }
                         }
                         case 3 -> {
-
+                            for(Object t : objetos){
+                                if (t instanceof Solar) {
+                                    System.out.println(t.toString());
+                                }
+                            }
                         }
                     }
                 }
@@ -181,10 +193,12 @@ public class Lab2P2_MarcelaTovar {
             }
             case 2 -> {
                 System.out.println("Ingrese el nombre: ");
+                leer.nextLine();
                 String nombre = leer.nextLine();
                 System.out.println("Ingrese la edad: ");
                 int edad = leer.nextInt();
                 System.out.println("Ingrese el user: ");
+                leer.nextLine();
                 String usuario = leer.nextLine();
                 System.out.println("Ingrese la contrasenia: ");
                 String contra = leer.nextLine();
