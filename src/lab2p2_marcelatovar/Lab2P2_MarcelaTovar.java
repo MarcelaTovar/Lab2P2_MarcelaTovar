@@ -111,21 +111,21 @@ public class Lab2P2_MarcelaTovar {
                     opcionLugar = leer.nextInt();
                     switch (opcionLugar) {
                         case 1 -> {
-                            for(Object t : objetos){
+                            for (Object t : objetos) {
                                 if (t instanceof Casa) {
                                     System.out.println(t.toString());
                                 }
                             }
                         }
                         case 2 -> {
-                            for(Object t : objetos){
+                            for (Object t : objetos) {
                                 if (t instanceof Edificio) {
                                     System.out.println(t.toString());
                                 }
                             }
                         }
                         case 3 -> {
-                            for(Object t : objetos){
+                            for (Object t : objetos) {
                                 if (t instanceof Solar) {
                                     System.out.println(t.toString());
                                 }
@@ -138,10 +138,61 @@ public class Lab2P2_MarcelaTovar {
                     opcionLugar = leer.nextInt();
                     switch (opcionLugar) {
                         case 1 -> {
+                            for (Object t : objetos) {
+                                if (t instanceof Casa) {
+                                    System.out.println(t.toString());
+                                }
+                            }
+                            System.out.println("Ingrese la posicion que quiere modificar: ");
+                            int pos = leer.nextInt();
+                            System.out.println("Que quiere modificar?");
+                            System.out.println("1. Numero de casa");
+                            System.out.println("2. Numero de bloque");
+                            System.out.println("3. Color");
+                            System.out.println("4. Ancho");
+                            System.out.println("5. Largo");
+                            System.out.println("6. Numero de banios");
+                            System.out.println("7. Numero de cuartos");
+                            int escoger = leer.nextInt();
+                            if (escoger == 1) {
+                                System.out.println("Cual es el nuevo numero de casas? ");
+                                int nuevo = leer.nextInt();
+                                ((Casa) objetos.get(pos)).setNumeroCasa(nuevo);
+                            } else if (escoger == 2) {
+                                System.out.println("Cual es el nuevo numero de bloque? ");
+                                int nuevo = leer.nextInt();
+                                ((Casa) objetos.get(pos)).setNumeroBloque(nuevo);
+                            } else if (escoger == 3) {
+                                System.out.println("Cual es el nuevo color? ");
+                                Color nuevo = JColorChooser.showDialog(null, "Ingrese color ", Color.red);
+                                ((Casa) objetos.get(pos)).setColor(nuevo);
+                            } else if (escoger == 4) {
+                                System.out.println("Cual es el nuevo ancho? ");
+                                int nuevo = leer.nextInt();
+                                ((Casa) objetos.get(pos)).setAncho(nuevo);
+                            } else if (escoger == 5) {
+                                System.out.println("Cual es el nuevo numero de banios? ");
+                                int nuevo = leer.nextInt();
+                                ((Casa) objetos.get(pos)).setNumeroBanios(nuevo);
+                            } else if (escoger == 6) {
+                                System.out.println("Cual es el nuevo numero de cuartos? ");
+                                int nuevo = leer.nextInt();
+                                ((Casa) objetos.get(pos)).setNumeroCuartos(nuevo);
+                            }
 
                         }
                         case 2 -> {
-
+                            for (Object t : objetos) {
+                                if (t instanceof Edificio) {
+                                    System.out.println(t.toString());
+                                }
+                            }
+                            System.out.println("Que quiere modificar?");
+                            System.out.println("1. Cantidad de locales");
+                            System.out.println("2. Numero de pisos");
+                            System.out.println("3. Direccion de referencia");
+                            int escoger = leer.nextInt();
+                            
                         }
                         case 3 -> {
 
