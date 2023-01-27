@@ -6,6 +6,7 @@ public class Edificio {
     private int numeroPisos;
     private int cantidadLocales;
     private String dirrecionReferencia;
+    private String estado;
 
     public Edificio() {
     }
@@ -39,6 +40,16 @@ public class Edificio {
     public void setDirrecionReferencia(String dirrecionReferencia) {
         this.dirrecionReferencia = dirrecionReferencia;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
 
     @Override
     public String toString() {

@@ -7,6 +7,7 @@ public class Solar {
     private double largo;
     private double area;
     private String duenio;
+    private String estado;
 
     public Solar() {
     }
