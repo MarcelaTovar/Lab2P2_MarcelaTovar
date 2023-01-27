@@ -58,10 +58,11 @@ public class Lab2P2_MarcelaTovar {
             System.out.println("--Menu Registro--");
             System.out.println("1.Crear\n2.Listar\n3.Modificar\n4.Borrar\n5.Vender");
             int opcion = leer.nextInt();
+           
             int opcionLugar = 0;
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("1. Casas\n2.Edificios\n3.Solares\n.4.Salir");
+                    System.out.println("1. Casas\n2.Edificios\n3.Solares");
                     opcionLugar = leer.nextInt();
                     switch (opcionLugar) {
                         case 1 -> {
@@ -70,7 +71,7 @@ public class Lab2P2_MarcelaTovar {
                             System.out.println("Ingrese el numero de bloque: ");
                             int numeroBloque = leer.nextInt();
                             System.out.println("Ingrese el color: ");
-                            Color color = JColorChooser.showDialog(null, "Ingrese color: ", Color.yellow);
+                            Color color = JColorChooser.showDialog(null, "Ingrese color: ", Color.red);
                             System.out.println("Ingrese el ancho: ");
                             double ancho = leer.nextDouble();
                             System.out.println("Ingrese el largo: ");
@@ -93,11 +94,16 @@ public class Lab2P2_MarcelaTovar {
                             objetos.add(edificio);
                         }
                         case 3 -> {
-                            
+                            System.out.println("Ingrese el largo: ");
+                            int largo = leer.nextInt();
+                            System.out.println("Ingrese el ancho: ");
+                            int ancho = leer.nextInt();
+                            System.out.println("Ingrese el duenio: ");
+                            String duenio = leer.nextLine();
+                            Solar solar = new Solar(ancho,largo,duenio);
+                            objetos.add(solar);
                         }
-                        case 4 ->{
-                            break;
-                        }
+                        
                     }
                 }
                 case 2 -> {
