@@ -1,6 +1,8 @@
 package lab2p2_marcelatovar;
 
+import java.awt.Color;
 import java.util.*;
+import javax.swing.JColorChooser;
 
 public class Lab2P2_MarcelaTovar {
 
@@ -59,17 +61,42 @@ public class Lab2P2_MarcelaTovar {
             int opcionLugar = 0;
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("1. Casas\n2.Edificios\n3.Solares");
+                    System.out.println("1. Casas\n2.Edificios\n3.Solares\n.4.Salir");
                     opcionLugar = leer.nextInt();
                     switch (opcionLugar) {
                         case 1 -> {
-
+                            System.out.println("Ingrese el numero de casas: ");
+                            int numeroCasas = leer.nextInt();
+                            System.out.println("Ingrese el numero de bloque: ");
+                            int numeroBloque = leer.nextInt();
+                            System.out.println("Ingrese el color: ");
+                            Color color = JColorChooser.showDialog(null, "Ingrese color: ", Color.yellow);
+                            System.out.println("Ingrese el ancho: ");
+                            double ancho = leer.nextDouble();
+                            System.out.println("Ingrese el largo: ");
+                            double largo = leer.nextDouble();
+                            System.out.println("Ingrese el numero de banios: ");
+                            int banios = leer.nextInt();
+                            System.out.println("Ingrese el numero de cuartos: ");
+                            int cuarto = leer.nextInt();
+                            Casa casa = new Casa(numeroCasas,numeroBloque,color,ancho,largo,banios,cuarto);
+                            objetos.add(casa);
                         }
                         case 2 -> {
-
+                            System.out.println("Ingrese el numero de pisos: ");
+                            int numeroPisos = leer.nextInt();
+                            System.out.println("Ingrese la cantidadd de locales: ");
+                            int cantidadLocales = leer.nextInt();
+                            System.out.println("Ingrese la direccion de referencia: ");
+                            String ref = leer.nextLine();
+                            Edificio edificio = new Edificio(numeroPisos,cantidadLocales,ref);
+                            objetos.add(edificio);
                         }
                         case 3 -> {
-
+                            
+                        }
+                        case 4 ->{
+                            break;
                         }
                     }
                 }
