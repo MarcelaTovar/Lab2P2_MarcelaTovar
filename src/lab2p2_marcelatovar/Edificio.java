@@ -12,11 +12,12 @@ public class Edificio {
     public Edificio() {
     }
 
-    public Edificio(int numeroPisos, int cantidadLocales, String dirrecionReferencia, String estado) {
+    public Edificio(int numeroPisos, int cantidadLocales, String dirrecionReferencia, String estado, String duenio) {
         this.numeroPisos = numeroPisos;
         this.cantidadLocales = cantidadLocales;
         this.dirrecionReferencia = dirrecionReferencia;
         this.estado = estado;
+        this.duenio = duenio;
     }
     
 
@@ -62,11 +63,10 @@ public class Edificio {
 
     @Override
     public String toString() {
-        return "Edificio{" + "numeroPisos=" + numeroPisos + ", cantidadLocales=" + cantidadLocales + ", dirrecionReferencia=" + dirrecionReferencia + ", estado=" + estado + '}';
+        return "Edificio{" + "numeroPisos=" + numeroPisos + ", cantidadLocales=" + cantidadLocales + ", dirrecionReferencia=" + dirrecionReferencia + ", estado=" + estado + ", duenio=" + duenio + '}';
     }
-    
-    
 
+    
     
     
     

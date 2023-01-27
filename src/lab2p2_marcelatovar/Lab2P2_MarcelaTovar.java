@@ -32,16 +32,13 @@ public class Lab2P2_MarcelaTovar {
                 }
                 case 2 -> {
                     if (log) {
-
+                        Estado(objetos);
                     } else {
                         System.out.println("Profavor ingrese la sesion");
                     }
                 }
                 case 3 -> {
                     log = logOrSign(user, terminar);
-                    if (log) {
-
-                    }
 
                 }
                 case 4 -> {
@@ -86,7 +83,7 @@ public class Lab2P2_MarcelaTovar {
                                 int banios = leer.nextInt();
                                 System.out.println("Ingrese el numero de cuartos: ");
                                 int cuarto = leer.nextInt();
-                                Casa casa = new Casa(numeroCasas, numeroBloque, color, ancho, largo, banios, cuarto, "En espera de demolicion");
+                                Casa casa = new Casa(numeroCasas, numeroBloque, color, ancho, largo, banios, cuarto, "En espera de demolicion", usuarioActivo.getUser());
                                 objetos.add(casa);
                             } else {
                                 System.out.println("Usted no tiene la autoridad para esta accion");
@@ -101,7 +98,7 @@ public class Lab2P2_MarcelaTovar {
                                 int cantidadLocales = leer.nextInt();
                                 System.out.println("Ingrese la direccion de referencia: ");
                                 String ref = leer.nextLine();
-                                Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref, "En espera de demolicion");
+                                Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref, "En espera de demolicion", usuarioActivo.getUser());
                                 objetos.add(edificio);
                             } else {
                                 System.out.println("Usted no tiene la autoridad para esta accion");
@@ -114,9 +111,7 @@ public class Lab2P2_MarcelaTovar {
                                 int largo = leer.nextInt();
                                 System.out.println("Ingrese el ancho: ");
                                 int ancho = leer.nextInt();
-                                System.out.println("Ingrese el duenio: ");
-                                String duenio = leer.nextLine();
-                                Solar solar = new Solar(ancho, largo, duenio);
+                                Solar solar = new Solar(ancho, largo, usuarioActivo.getUser());
                                 objetos.add(solar);
                             } else {
                                 System.out.println("Usted no tiene la autoridad para esta accion");
@@ -251,7 +246,6 @@ public class Lab2P2_MarcelaTovar {
                                 System.out.println("Que quiere modificar?");
                                 System.out.println("1. Ancho");
                                 System.out.println("2. Largo");
-                                System.out.println("3. Duenio");
                                 int escoger = leer.nextInt();
                                 if (escoger == 1) {
                                     System.out.println("Cual es el nuevo ancho?");
@@ -262,11 +256,6 @@ public class Lab2P2_MarcelaTovar {
                                     System.out.println("Cual es el nuevo largo?");
                                     int nuevo = leer.nextInt();
                                     ((Solar) objetos.get(pos)).setLargo(nuevo);
-
-                                } else if (escoger == 3) {
-                                    System.out.println("Cual es el nuevo ancho?");
-                                    String nuevo = leer.nextLine();
-                                    ((Solar) objetos.get(pos)).setDuenio(nuevo);
 
                                 }
 
@@ -328,6 +317,45 @@ public class Lab2P2_MarcelaTovar {
 
                         }
 
+                    }
+                }
+                case 5 -> {
+                    System.out.println("1.Casas\n2.Edificios\n3.Solares");
+                    System.out.println("Que desea vender?");
+                    int e = leer.nextInt();
+                    if (e == 1) {
+                        for (Object t : objetos) {
+                            if (t instanceof Casa) {
+                                System.out.println(t.toString());
+                            }
+                        }
+                        System.out.println("Que posicion quiere vender: ");
+                        int pos = leer.nextInt();
+                        System.out.println("Ingrese el nuevo duenio: ");
+                        String duenio = leer.nextLine();
+                        ((Casa) objetos.get(e)).setDuenio(duenio);
+                    } else if (e == 2) {
+                        for (Object t : objetos) {
+                            if (t instanceof Edificio) {
+                                System.out.println(t.toString());
+                            }
+                        }
+                        System.out.println("Que posicion quiere vender: ");
+                        int pos = leer.nextInt();
+                        System.out.println("Ingrese el nuevo duenio: ");
+                        String duenio = leer.nextLine();
+                        ((Edificio) objetos.get(e)).setDuenio(duenio);
+                    } else if (e == 3) {
+                        for (Object t : objetos) {
+                            if (t instanceof Solar) {
+                                System.out.println(t.toString());
+                            }
+                        }
+                        System.out.println("Que posicion quiere vender: ");
+                        int pos = leer.nextInt();
+                        System.out.println("Ingrese el nuevo duenio: ");
+                        String duenio = leer.nextLine();
+                        ((Solar)objetos.get(e)).setDuenio(duenio);
                     }
                 }
             }
@@ -398,10 +426,10 @@ public class Lab2P2_MarcelaTovar {
                 int p = leer.nextInt();
                 System.out.println("Ingrese el nuevo Estado: ");
                 String estado = leer.nextLine();
-                ((Casa)objetos.get(p)).setEstado(estado);
+                ((Casa) objetos.get(p)).setEstado(estado);
                 System.out.println("Ingrese el duenio: ");
-                ((Casa)objetos.get(p)).setDuenio(estado);
-            }else if(opcion.equalsIgnoreCase("E")){
+                ((Casa) objetos.get(p)).setDuenio(estado);
+            } else if (opcion.equalsIgnoreCase("E")) {
                 for (Object t : objetos) {
                     if (t instanceof Edificio) {
                         System.out.println(t.toString());
@@ -411,12 +439,11 @@ public class Lab2P2_MarcelaTovar {
                 int p = leer.nextInt();
                 System.out.println("Ingrese el nuevo Estado: ");
                 String estado = leer.nextLine();
-                ((Edificio)objetos.get(p)).setEstado(estado);
-                 System.out.println("Ingrese el duenio: ");
-                ((Edificio)objetos.get(p)).setDuenio(estado);
+                ((Edificio) objetos.get(p)).setEstado(estado);
+                System.out.println("Ingrese el duenio: ");
+                ((Edificio) objetos.get(p)).setDuenio(estado);
             }
-        }
-        else{
+        } else {
             System.out.println("No tiene la autoridad para realizar este cambio");
         }
     }
