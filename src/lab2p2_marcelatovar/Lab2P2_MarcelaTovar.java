@@ -91,12 +91,13 @@ public class Lab2P2_MarcelaTovar {
 
                         }
                         case 2 -> {
-                            if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
+                            if (usuarioActivo.getUser().equals("admin")) {
                                 System.out.println("Ingrese el numero de pisos: ");
                                 int numeroPisos = leer.nextInt();
                                 System.out.println("Ingrese la cantidadd de locales: ");
                                 int cantidadLocales = leer.nextInt();
                                 System.out.println("Ingrese la direccion de referencia: ");
+                                leer.nextLine();
                                 String ref = leer.nextLine();
                                 Edificio edificio = new Edificio(numeroPisos, cantidadLocales, ref, "En espera de demolicion", usuarioActivo.getUser());
                                 objetos.add(edificio);
@@ -249,12 +250,12 @@ public class Lab2P2_MarcelaTovar {
                                 int escoger = leer.nextInt();
                                 if (escoger == 1) {
                                     System.out.println("Cual es el nuevo ancho?");
-                                    int nuevo = leer.nextInt();
+                                    double nuevo = leer.nextInt();
                                     ((Solar) objetos.get(pos)).setAncho(nuevo);
 
                                 } else if (escoger == 2) {
                                     System.out.println("Cual es el nuevo largo?");
-                                    int nuevo = leer.nextInt();
+                                    double nuevo = leer.nextInt();
                                     ((Solar) objetos.get(pos)).setLargo(nuevo);
 
                                 }
@@ -424,11 +425,23 @@ public class Lab2P2_MarcelaTovar {
                 }
                 System.out.println("Ingrese la posicion: ");
                 int p = leer.nextInt();
-                System.out.println("Ingrese el nuevo Estado: ");
-                String estado = leer.nextLine();
-                ((Casa) objetos.get(p)).setEstado(estado);
-                System.out.println("Ingrese el duenio: ");
-                ((Casa) objetos.get(p)).setDuenio(estado);
+                System.out.println("Ingrese el nuevo Estado(1.Lista, 2.En Construccion, 3. Construccion en Esperoa, 4. En Espera de demolicion: )");
+                int estado = leer.nextInt();
+                switch(estado){
+                    case 1 ->{
+                        ((Casa) objetos.get(p)).setEstado("Lista");
+                    }
+                    case 2 ->{
+                        ((Casa) objetos.get(p)).setEstado("En Construccion");
+                    }
+                    case 3 ->{
+                        ((Casa) objetos.get(p)).setEstado("Construccion en Espera");
+                    }
+                    case 4->{
+                        ((Casa) objetos.get(p)).setEstado("En Espera de Demolicion");
+                    }
+                }
+                
             } else if (opcion.equalsIgnoreCase("E")) {
                 for (Object t : objetos) {
                     if (t instanceof Edificio) {
@@ -437,11 +450,23 @@ public class Lab2P2_MarcelaTovar {
                 }
                 System.out.println("Ingrese la posicion: ");
                 int p = leer.nextInt();
-                System.out.println("Ingrese el nuevo Estado: ");
-                String estado = leer.nextLine();
-                ((Edificio) objetos.get(p)).setEstado(estado);
-                System.out.println("Ingrese el duenio: ");
-                ((Edificio) objetos.get(p)).setDuenio(estado);
+                System.out.println("Ingrese el nuevo Estado (1.Lista, 2.En Construccion, 3. Construccion en Esperoa, 4. En Espera de demolicion: ): ");
+                int estado = leer.nextInt();
+                switch(estado){
+                    case 1 ->{
+                        ((Edificio) objetos.get(p)).setEstado("Lista");
+                    }
+                    case 2 ->{
+                        ((Edificio) objetos.get(p)).setEstado("En Construccion");
+                    }
+                    case 3 ->{
+                        ((Edificio) objetos.get(p)).setEstado("Construccion en Espera");
+                    }
+                    case 4->{
+                        ((Edificio) objetos.get(p)).setEstado("En Espera de Demolicion");
+                    }
+                }
+                
             }
         } else {
             System.out.println("No tiene la autoridad para realizar este cambio");
