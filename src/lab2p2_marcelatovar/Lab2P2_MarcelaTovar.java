@@ -155,11 +155,7 @@ public class Lab2P2_MarcelaTovar {
                     switch (opcionLugar) {
                         case 1 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Casa) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Ingrese la posicion que quiere modificar: ");
                                 int pos = leer.nextInt();
                                 System.out.println("Que quiere modificar?");
@@ -203,11 +199,7 @@ public class Lab2P2_MarcelaTovar {
                         }
                         case 2 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Edificio) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Ingrese la posicion que quiere modificar: ");
                                 int pos = leer.nextInt();
                                 System.out.println("Que quiere modificar?");
@@ -237,11 +229,7 @@ public class Lab2P2_MarcelaTovar {
                         }
                         case 3 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Solar) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Ingrese la posicion que quiere modificar: ");
                                 int pos = leer.nextInt();
                                 System.out.println("Que quiere modificar?");
@@ -273,11 +261,7 @@ public class Lab2P2_MarcelaTovar {
                     switch (opcionLugar) {
                         case 1 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Casa) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Que posicion quiere eliminar: ");
                                 int pos = leer.nextInt();
                                 objetos.remove(pos);
@@ -288,11 +272,7 @@ public class Lab2P2_MarcelaTovar {
                         }
                         case 2 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Edificio) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Que posicion quiere eliminar: ");
                                 int pos = leer.nextInt();
                                 objetos.remove(pos);
@@ -304,11 +284,7 @@ public class Lab2P2_MarcelaTovar {
 
                         case 3 -> {
                             if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
-                                for (Object t : objetos) {
-                                    if (t instanceof Solar) {
-                                        System.out.println(t.toString());
-                                    }
-                                }
+                                System.out.println(objetos.toString());
                                 System.out.println("Que posicion quiere eliminar: ");
                                 int pos = leer.nextInt();
                                 objetos.remove(pos);
@@ -325,11 +301,7 @@ public class Lab2P2_MarcelaTovar {
                     System.out.println("Que desea vender?");
                     int e = leer.nextInt();
                     if (e == 1) {
-                        for (Object t : objetos) {
-                            if (t instanceof Casa) {
-                                System.out.println(t.toString());
-                            }
-                        }
+                        System.out.println(objetos.toString());
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
@@ -337,11 +309,7 @@ public class Lab2P2_MarcelaTovar {
                         String duenio = leer.nextLine();
                         ((Casa) objetos.get(pos)).setDuenio(duenio);
                     } else if (e == 2) {
-                        for (Object t : objetos) {
-                            if (t instanceof Edificio) {
-                                System.out.println(t.toString());
-                            }
-                        }
+                        System.out.println(objetos.toString());
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
@@ -349,11 +317,7 @@ public class Lab2P2_MarcelaTovar {
                         String duenio = leer.nextLine();
                         ((Edificio) objetos.get(pos)).setDuenio(duenio);
                     } else if (e == 3) {
-                        for (Object t : objetos) {
-                            if (t instanceof Solar) {
-                                System.out.println(t.toString());
-                            }
-                        }
+                        System.out.println(objetos.toString());
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
