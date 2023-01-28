@@ -333,8 +333,9 @@ public class Lab2P2_MarcelaTovar {
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
+                        leer.nextLine();
                         String duenio = leer.nextLine();
-                        ((Casa) objetos.get(e)).setDuenio(duenio);
+                        ((Casa) objetos.get(pos)).setDuenio(duenio);
                     } else if (e == 2) {
                         for (Object t : objetos) {
                             if (t instanceof Edificio) {
@@ -344,8 +345,9 @@ public class Lab2P2_MarcelaTovar {
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
+                        leer.nextLine();
                         String duenio = leer.nextLine();
-                        ((Edificio) objetos.get(e)).setDuenio(duenio);
+                        ((Edificio) objetos.get(pos)).setDuenio(duenio);
                     } else if (e == 3) {
                         for (Object t : objetos) {
                             if (t instanceof Solar) {
@@ -355,8 +357,9 @@ public class Lab2P2_MarcelaTovar {
                         System.out.println("Que posicion quiere vender: ");
                         int pos = leer.nextInt();
                         System.out.println("Ingrese el nuevo duenio: ");
+                        leer.nextLine();
                         String duenio = leer.nextLine();
-                        ((Solar)objetos.get(e)).setDuenio(duenio);
+                        ((Solar)objetos.get(pos)).setDuenio(duenio);
                     }
                 }
             }
@@ -417,12 +420,9 @@ public class Lab2P2_MarcelaTovar {
         if (usuarioActivo.getUser().equals("admin") && usuarioActivo.getContrasenia().equals("admin1234")) {
             System.out.println("Desea cambiar casas[C] o edificios[E]?");
             String opcion = leer.next();
+            System.out.println(objetos.toString());
             if (opcion.equalsIgnoreCase("C")) {
-                for (Object t : objetos) {
-                    if (t instanceof Casa) {
-                        System.out.println(t.toString());
-                    }
-                }
+               
                 System.out.println("Ingrese la posicion: ");
                 int p = leer.nextInt();
                 System.out.println("Ingrese el nuevo Estado(1.Lista, 2.En Construccion, 3. Construccion en Esperoa, 4. En Espera de demolicion: )");
@@ -443,11 +443,7 @@ public class Lab2P2_MarcelaTovar {
                 }
                 
             } else if (opcion.equalsIgnoreCase("E")) {
-                for (Object t : objetos) {
-                    if (t instanceof Edificio) {
-                        System.out.println(t.toString());
-                    }
-                }
+                
                 System.out.println("Ingrese la posicion: ");
                 int p = leer.nextInt();
                 System.out.println("Ingrese el nuevo Estado (1.Lista, 2.En Construccion, 3. Construccion en Esperoa, 4. En Espera de demolicion: ): ");
